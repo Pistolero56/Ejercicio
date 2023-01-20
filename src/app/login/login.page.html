@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+		<div class="input-group">
+      <span> Email</span>
+			<ion-item>
+				<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+			<div >
+        <span> Contraseña</span>
+			</div>
+			<ion-item>
+				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			</ion-item>
+			<div>
+				<span>Se necesitan 6 caracteres para la contraseña</span>
+			</div>
+		</div>
+
+		<ion-button type="submit" expand="block" [disabled]="!credentials.valid" [routerLink]="['/producto']">login</ion-button>
+		<ion-button type="button" expand="block" color="light" fill="clear"
+			>¿No recuerdas tu nombre? Presiona aqui!
+		</ion-button>
+
+		<ion-button type="button" expand="block" color="tertiary">
+			<ion-icon name="logo-google" slot="start"></ion-icon>
+			incia sesion con Google
+		</ion-button>
+		<ion-button type="button" expand="block" color="tertiary">
+			<ion-icon name="logo-apple" slot="start"></ion-icon>
+			incia sesion con Apple
+		</ion-button>
+	</form>
+</ion-content>
